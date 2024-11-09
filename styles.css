@@ -1,0 +1,93 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("{{ url_for('static', filename='images/fraud_detection.jpg') }}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    max-width: 1300px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.left-image {
+    width: 100%; /* Make the image responsive */
+    max-width: 800px; /* Limit maximum size */
+    height: 100%;
+    object-fit: cover; /* Ensure the image fits without distortion */
+}
+
+.form-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    font-weight: 600;
+    color: #333;
+}
+
+form label {
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+h3 {
+    color: #333;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e0f7fa;
+    border-left: 5px solid #00796b;
+    border-radius: 6px;
+}
+
+.result h3 {
+    margin: 0;
+    color: #00796b;
+    font-weight: 500;
+}

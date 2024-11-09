@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Fraud Detection</title>
+    <!-- Google Font for attractive typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side Image -->
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='images/fraud_detection.jpg') }}" alt="Fraud Detection" class="left-image">
+        </div>
+
+        <!-- Right Side Form -->
+        <div class="form-section">
+            <h1>UPI Fraud Detection</h1>
+            <form method="POST" action="/predict">
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" required><br><br>
+
+                <label for="time">Time (Hour of the Day):</label>
+                <input type="text" id="time" name="time" required><br><br>
+
+                <label for="location">Location (0 = City, 1 = Rural):</label>
+                <input type="text" id="location" name="location" required><br><br>
+
+                <label for="device_info">Device Type (0 = Mobile, 1 = Tablet, 2 = Laptop):</label>
+                <input type="text" id="device_info" name="device_info" required><br><br>
+
+                <input type="submit" value="Predict">
+            </form>
+
+            {% if prediction_result %}
+                <h3>{{ prediction_result }}</h3>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
